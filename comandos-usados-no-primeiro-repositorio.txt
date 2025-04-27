@@ -1,0 +1,55 @@
+Comandos usados para criar o repositório local:
+
+Mostrar onde está sendo salvo o diretório:
+pwd
+
+Cria um diretório para o projeto:
+mkdir curso-git-embarcatech
+
+Entrar no diretório:
+cd curso-git-embarcatech
+
+Iniciando o repositório Git:
+git init
+OBS: No meu caso já criou a branch chamada 'main'.
+
+Verificar arquivos no diretório:
+ls
+
+Verificar arquivos, incluindo ocultos:
+ls -a
+
+Verificar conteúdos do diretório .git:
+ls .git
+
+Configurar nome de usuário:
+git config user.name "Marcelo Junior"
+
+Configurar e-mail do usuário:
+git config user.email "macelo17@gmail.com"
+
+Listar configurações locais:
+git config --list --local
+
+Verificar status do repositório:
+git status
+
+Adicionar arquivo ao índice:
+git add marcelo-junior.txt
+
+Fazer o commit das alterações:
+git commit -m "meu primeiro commit"
+
+Verificar o status novamente:
+git status
+
+Verificar o log de commits:
+git log
+
+Comandos para conectar ao GitHub e fazer o push:
+git remote set-url origin-github https://github.com/marcelo31vasco/curso-git-embarcatech.git
+
+Fazer o push para o repositório remoto:
+git push -u origin-github main
+
+Esses foram os comandos que usei no processo de criação do repositório local, configuração do usuário, adição de arquivos, commit e envio para o GitHub.
