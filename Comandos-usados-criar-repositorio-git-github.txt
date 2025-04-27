@@ -1,55 +1,249 @@
-Comandos usados para criar o repositório local:
+Comandos Git
+🔧 1. Configuração Inicial
+1.	git config --global user.name "Seu Nome" – Define o nome de usuário.
+2.	git config --global user.email "seu@email.com" – Define o e-mail do usuário.
+3.	git config --global core.editor nano – Define o editor de texto.
+4.	git config --list – Lista todas as configurações.
+5.	git config user.name – Mostra o nome de usuário atual.
+6.	git config user.email – Mostra o e-mail atual.
+7.	git config --global alias.co checkout – Cria um atalho para checkout.
+8.	git config --global core.autocrlf input – Configura o tratamento de final de linha.
+9.	git config --global init.defaultBranch main – Define o nome padrão da branch inicial.
+10.	git config --global color.ui auto – Ativa cores automaticamente.
+________________________________________
+📁 2. Inicialização e Clonagem
+1.	git init – Inicializa um novo repositório Git.
+2.	git init nome-do-diretorio – Inicializa repositório em diretório específico.
+3.	git clone <url> – Clona um repositório existente.
+4.	git clone --bare <url> – Clona um repositório sem a árvore de trabalho.
+5.	git clone --depth 1 <url> – Clona apenas o último commit (shallow).
+________________________________________
+📂 3. Gerenciamento de Arquivos
+1.	git status – Mostra o status dos arquivos.
+2.	git add <arquivo> – Adiciona um arquivo para o stage.
+3.	git add . – Adiciona todos os arquivos modificados.
+4.	git add -A – Adiciona todos os arquivos, inclusive deletados.
+5.	git reset <arquivo> – Remove arquivo do stage.
+6.	git rm <arquivo> – Remove um arquivo do repositório e da árvore.
+7.	git mv <orig> <dest> – Move ou renomeia arquivos.
+________________________________________
+✅ 4. Commit e Histórico
+1.	git commit -m "mensagem" – Faz um commit com mensagem.
+2.	git commit – Abre editor para escrever commit.
+3.	git commit --amend – Edita o último commit.
+4.	git log – Mostra o histórico de commits.
+5.	git log --oneline – Mostra log com uma linha por commit.
+6.	git log --graph – Mostra árvore de branches.
+7.	git log -p – Mostra diffs nos commits.
+8.	git shortlog – Mostra o resumo por autor.
+9.	git show – Mostra detalhes do último commit.
+10.	git show <hash> – Mostra um commit específico.
+11.	git blame <arquivo> – Mostra quem modificou cada linha.
+________________________________________
+🌿 5. Branches e Tags
+1.	git branch – Lista branches locais.
+2.	git branch <nome> – Cria nova branch.
+3.	git checkout <branch> – Muda de branch.
+4.	git checkout -b <nova> – Cria e muda para nova branch.
+5.	git merge <branch> – Junta outra branch à atual.
+6.	git branch -d <branch> – Deleta branch.
+7.	git tag – Lista tags.
+8.	git tag <nome> – Cria uma tag.
+9.	git tag -a <nome> -m "mensagem" – Tag anotada.
+10.	git show <tag> – Mostra a tag.
+________________________________________
+🔁 6. Rebase e Cherry-pick
+1.	git rebase <branch> – Reaplica commits.
+2.	git rebase -i <base> – Rebase interativo.
+3.	git cherry-pick <hash> – Aplica commit específico.
+4.	git cherry – Lista commits únicos.
+________________________________________
+🧪 7. Stash (Salvamento Temporário)
+1.	git stash – Guarda mudanças temporariamente.
+2.	git stash list – Lista stashes salvos.
+3.	git stash apply – Aplica stash atual.
+4.	git stash drop – Remove stash.
+5.	git stash pop – Aplica e remove stash.
+6.	git stash clear – Limpa todos os stashes.
+________________________________________
+🌐 8. Repositório Remoto
+1.	git remote – Lista remotos.
+2.	git remote add origin <url> – Adiciona remoto.
+3.	git remote -v – Mostra URLs de fetch/push.
+4.	git push – Envia alterações.
+5.	git push -u origin main – Push com upstream.
+6.	git push --tags – Envia tags.
+7.	git fetch – Busca alterações.
+8.	git pull – Puxa e mescla mudanças.
+9.	git pull --rebase – Puxa com rebase.
+🧹 9. Limpeza e Correções
+1.	git clean -n – Mostra o que seria removido.
+2.	git clean -f – Remove arquivos não rastreados.
+3.	git clean -fd – Remove arquivos e diretórios não rastreados.
+4.	git fsck – Verifica a integridade do repositório.
+5.	git gc – Otimiza o repositório.
+6.	git prune – Remove objetos inatingíveis.
+7.	git reflog – Mostra histórico de referências.
+8.	git reset – Reseta o HEAD para commit anterior.
+9.	git reset --soft <commit> – Mantém arquivos no stage.
+10.	git reset --mixed <commit> – Remove do stage.
+11.	git reset --hard <commit> – Reseta tudo, inclusive arquivos.
+12.	git revert <hash> – Cria novo commit revertendo outro.
+13.	git bisect – Localiza commits com bugs.
+14.	git bisect start – Inicia o bisect.
+15.	git bisect bad – Marca commit com bug.
+16.	git bisect good – Marca commit funcional.
+17.	git bisect reset – Encerra o bisect.
+________________________________________
+🔍 10. Busca e Comparação
+1.	git diff – Mostra diferenças não comitadas.
+2.	git diff --staged – Diferença entre staged e último commit.
+3.	git diff <branch1> <branch2> – Diferença entre branches.
+4.	git diff <commit1> <commit2> – Diferença entre commits.
+5.	git grep "texto" – Busca por texto nos arquivos.
+6.	git log -S "texto" – Mostra commits que adicionaram/removeram texto.
+7.	git log --since="2 weeks ago" – Commits desde duas semanas atrás.
+8.	git log --author="nome" – Commits por autor específico.
+________________________________________
+📦 11. Submódulos
+1.	git submodule add <url> caminho/ – Adiciona submódulo.
+2.	git submodule init – Inicializa submódulos.
+3.	git submodule update – Atualiza submódulos.
+4.	git submodule foreach 'comando' – Executa comando em cada submódulo.
+5.	git submodule deinit <pasta> – Remove configuração de submódulo.
+6.	git submodule status – Mostra o estado dos submódulos.
+________________________________________
+🧭 12. Navegação
+1.	git checkout <commit> – Navega para commit.
+2.	git checkout HEAD~1 – Volta um commit.
+3.	git checkout @{-1} – Volta para branch anterior.
+4.	git switch <branch> – Muda de branch (alternativa ao checkout).
+5.	git switch -c <branch> – Cria e muda para nova branch.
+6.	git show-branch – Compara branches.
+7.	git archive --format zip --output arquivo.zip HEAD – Exporta snapshot do repositório.
+________________________________________
+📤 13. Upload & Download Avançado
+1.	git push origin <branch> – Envia branch específica.
+2.	git push origin --delete <branch> – Remove branch remota.
+3.	git fetch origin – Busca tudo do remoto.
+4.	git fetch origin <branch> – Busca branch específica.
+5.	git pull origin <branch> – Puxa alterações específicas.
+6.	git pull --no-commit – Puxa sem fazer commit automático.
+7.	git push --force – Força push (cuidado!).
+8.	git push --force-with-lease – Push forçado com segurança.
+9.	git remote rename origin upstream – Renomeia remoto.
+10.	git remote remove <nome> – Remove remoto.
+11.	git remote set-url origin <nova-url> – Atualiza URL do remoto.
+12.	git push --set-upstream origin <branch> – Define upstream da branch.
+🧪 14. Testes, Debug e Commit Avançado
+1.	git commit --no-verify – Ignora hooks ao fazer commit.
+2.	git commit --allow-empty – Commit sem alterações.
+3.	git commit --dry-run – Simula um commit.
+4.	git commit --only <arquivo> – Commit apenas de um arquivo.
+5.	git commit -a -m "msg" – Adiciona e commita arquivos rastreados.
+6.	git commit -v – Mostra diff no editor ao commitar.
+7.	git commit --author="Nome <email>" – Define autor do commit.
+8.	git diff --name-only – Mostra só os nomes dos arquivos modificados.
+9.	git diff --cached – Mostra diferenças no staged.
+10.	git log --decorate – Mostra refs e tags no log.
+11.	git log --name-status – Mostra arquivos modificados nos commits.
+12.	git log --pretty=format:"%h - %an - %s" – Log customizado.
+13.	git log --abbrev-commit – Mostra hashes curtos.
+14.	git describe – Mostra tag mais próxima do commit atual.
+15.	git whatchanged – Similar ao log, com mais detalhes.
+16.	git diff-tree --no-commit-id --name-only -r <hash> – Arquivos modificados num commit.
+17.	git blame -L 10,20 arquivo.txt – Blame da linha 10 à 20.
+________________________________________
+🔗 15. Git Hooks (Automação)
+1.	pre-commit – Hook antes de um commit.
+2.	prepare-commit-msg – Modifica mensagem antes de abrir editor.
+3.	commit-msg – Valida mensagem antes de salvar.
+4.	post-commit – Executa após o commit.
+5.	pre-push – Executa antes de push.
+6.	pre-rebase – Executa antes de rebase.
+7.	applypatch-msg – Para git am, valida mensagem.
+8.	pre-applypatch – Antes de aplicar um patch.
+9.	post-applypatch – Após aplicar um patch.
+________________________________________
+🔍 16. Busca e Inspeção
+1.	git grep -n "texto" – Mostra linha da ocorrência.
+2.	git grep -e "regex" – Busca com regex.
+3.	git grep --count "texto" – Mostra número de ocorrências.
+4.	git grep --cached "texto" – Busca no index/staged.
+5.	git ls-files – Lista arquivos rastreados.
+6.	git ls-tree HEAD – Lista arquivos no snapshot.
+7.	git ls-remote – Lista refs no repositório remoto.
+8.	git show-ref – Mostra todas as referências.
+9.	git rev-parse HEAD – Mostra o hash do commit atual.
+10.	git name-rev HEAD – Nome da branch atual.
+________________________________________
+🧰 17. Ferramentas Avançadas
+1.	git filter-branch – Reescreve histórico completo.
+2.	git fast-import – Importa via script.
+3.	git fast-export – Exporta via script.
+4.	git rerere – Habilita resolução automática de conflitos reincidentes.
+5.	git worktree add <dir> <branch> – Cria árvore de trabalho paralela.
+6.	git worktree list – Lista worktrees ativas.
+7.	git bundle create – Exporta repositório para arquivo.
+8.	git bundle verify – Verifica validade de um bundle.
+9.	git bundle unbundle – Extrai dados do bundle.
+10.	git daemon – Inicia servidor Git.
+11.	git instaweb – Abre interface web local.
+12.	git instaweb --httpd=webrick – Força servidor específico.
+________________________________________
+🔐 18. Segurança e Autenticação
+1.	git credential-store – Armazena credenciais em arquivo.
+2.	git credential-cache – Guarda credenciais na memória por tempo limitado.
+🧩 19. Git Aliases e Personalização
+1.	git config --global alias.st status – Atalho para status.
+2.	git config --global alias.ci commit – Atalho para commit.
+3.	git config --global alias.co checkout – Atalho para checkout.
+4.	git config --global alias.br branch – Atalho para branch.
+5.	git config --global alias.hist "log --oneline --graph" – Log gráfico resumido.
+6.	git config --global alias.last "log -1 HEAD" – Último commit.
+7.	git config --global alias.unstage 'reset HEAD --' – Desfaz git add.
+8.	git config --global alias.visual '!gitk' – Abre GUI do Git (se instalado).
+9.	git config --global alias.root 'rev-parse --show-toplevel' – Caminho raiz do repo.
+10.	git config --global alias.type 'cat-file -t' – Tipo de objeto Git.
+11.	git config --global alias.dump 'cat-file -p' – Conteúdo de objeto Git.
+________________________________________
+💣 20. Diagnóstico e Suporte
+1.	git diagnose – Coleta informações para suporte (novo em versões recentes).
+2.	git bugreport – Gera relatório de bugs para enviar ao suporte.
+3.	git help <comando> – Mostra ajuda sobre o comando.
+4.	git help -a – Mostra todos os comandos disponíveis.
+5.	git version – Mostra a versão instalada.
+6.	git config --global help.autocorrect 1 – Corrige comandos com erro de digitação.
+________________________________________
+🧪 21. Git Rebase Interativo Avançado
+1.	pick – Mantém o commit como está.
+2.	reword – Edita a mensagem do commit.
+3.	edit – Altera o conteúdo do commit.
+4.	squash – Junta commits, mantendo múltiplas mensagens.
+5.	fixup – Junta commits e descarta mensagens.
+6.	exec – Executa comandos no meio do rebase.
+7.	drop – Remove commit da história.
+________________________________________
+📂 22. Arquitetura Interna
+1.	git cat-file -t <hash> – Tipo de objeto (blob, tree, commit...).
+2.	git cat-file -p <hash> – Mostra o conteúdo de um objeto Git.
+3.	git rev-list HEAD – Lista todos os commits do HEAD.
+4.	git rev-list --count HEAD – Número total de commits.
+5.	git rev-list HEAD --author="nome" – Commits por autor.
+________________________________________
+🧠 23. Extras Avançados / Casos Especiais
+1.	git merge --abort – Cancela merge com conflito.
+2.	git rebase --abort – Cancela rebase.
+3.	git rebase --continue – Continua após resolver conflito.
+4.	git mergetool – Abre ferramenta gráfica para resolver conflitos.
+5.	git difftool – Usa ferramenta externa para comparar.
+6.	git credential-approve – Salva manualmente uma credencial.
+7.	git credential-reject – Rejeita credencial salva.
+8.	git gc --aggressive – Limpeza agressiva do repo.
+9.	git maintenance run – Executa tarefas de manutenção.
+10.	git maintenance start – Agenda tarefas automáticas.
+11.	git maintenance stop – Cancela agendamento.
+________________________________________
+🧠 Dica Extra:
+Você pode visualizar todos os comandos internos do Git com: git help -a | grep '^ ' – Lista todos os comandos possíveis (inclusive os menos usados).
 
-Mostrar onde está sendo salvo o diretório:
-pwd
-
-Cria um diretório para o projeto:
-mkdir curso-git-embarcatech
-
-Entrar no diretório:
-cd curso-git-embarcatech
-
-Iniciando o repositório Git:
-git init
-OBS: No meu caso já criou a branch chamada 'main'.
-
-Verificar arquivos no diretório:
-ls
-
-Verificar arquivos, incluindo ocultos:
-ls -a
-
-Verificar conteúdos do diretório .git:
-ls .git
-
-Configurar nome de usuário:
-git config user.name "Marcelo Junior"
-
-Configurar e-mail do usuário:
-git config user.email "macelo17@gmail.com"
-
-Listar configurações locais:
-git config --list --local
-
-Verificar status do repositório:
-git status
-
-Adicionar arquivo ao índice:
-git add marcelo-junior.txt
-
-Fazer o commit das alterações:
-git commit -m "meu primeiro commit"
-
-Verificar o status novamente:
-git status
-
-Verificar o log de commits:
-git log
-
-Comandos para conectar ao GitHub e fazer o push:
-git remote set-url origin-github https://github.com/marcelo31vasco/curso-git-embarcatech.git
-
-Fazer o push para o repositório remoto:
-git push -u origin-github main
-
-Esses foram os comandos que usei no processo de criação do repositório local, configuração do usuário, adição de arquivos, commit e envio para o GitHub.
