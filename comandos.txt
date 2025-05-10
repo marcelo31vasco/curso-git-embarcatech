@@ -1,0 +1,151 @@
+Marcelo Vitorino Dantas Junior
+
+
+
+
+### 1. `pwd`
+
+Exibe o diretório atual em que você está (Print Working Directory).
+**Usado para saber onde você está no sistema de arquivos.**
+
+---
+
+### 2. `cd curso-git-embarcatech`
+
+Tentativa de mudar para o diretório `curso-git-embarcatech`, mas deu erro porque esse diretório não existia no local atual.
+
+---
+
+### 3. `ls`
+
+Lista os arquivos e diretórios do diretório atual.
+**Usado várias vezes para visualizar o conteúdo dos diretórios.**
+
+---
+
+### 4. `cd /c/Users/Marce`
+
+Muda para o diretório `/c/Users/Marce`, que é o caminho onde ficam seus arquivos pessoais no Windows.
+
+---
+
+### 5. `cd Documents`
+
+Acessa a pasta `Documents` do seu usuário.
+
+---
+
+### 6. `cd GitHub`
+
+Entra na pasta `GitHub`, onde você provavelmente armazena projetos relacionados ao Git.
+
+---
+
+### 7. `cd curso-git-embarcatech`
+
+Acessa o diretório `curso-git-embarcatech`, que estava dentro de `GitHub`.
+
+---
+
+### 8. `git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead.git`
+
+Clona um repositório Git remoto hospedado no GitLab para seu computador local.
+
+---
+
+### 9. `cd curso-branchs-ifrn-ead`
+
+Entra na pasta do repositório recém-clonado.
+
+---
+
+### 10. `echo "Tarefa da 2 unidade do curso Git" > texto.txt`
+
+Cria um arquivo `texto.txt` com o conteúdo indicado.
+
+---
+
+### 11. `git add texto.txt`
+
+Adiciona o arquivo `texto.txt` à **área de stage** do Git (preparado para ser commitado).
+
+---
+
+### 12. `git commit -m "Adicionando texto.txt em conteúdo inicial"`
+
+Salva (commita) a alteração no repositório local com uma mensagem descritiva.
+
+---
+
+### 13. `git checkout -b feature-1`
+
+Cria e muda para uma nova branch chamada `feature-1`.
+**Branches servem para desenvolver novas funcionalidades isoladamente.**
+
+---
+
+### 14. `echo "Alterando conteúdo do arquivo txt na feature-1" > texto.txt`
+
+Substitui o conteúdo do arquivo `texto.txt` por uma nova frase.
+
+---
+
+### 15. `git add texto.txt`
+
+Adiciona novamente o `texto.txt` para o stage, com a nova alteração.
+
+---
+
+### 16. `git commit -m "Alterando cpnteúdo de texto.txt na branch feature-1"`
+
+Salva as alterações feitas na branch `feature-1`.
+
+---
+
+### 17. `git checkout main`
+
+Volta para a branch principal `main`.
+
+---
+
+### 18. `echo "Conteúdo alterado na main" > texto.txt`
+
+Altera o conteúdo do `texto.txt` novamente, agora na branch `main`.
+
+---
+
+### 19. `git add texto.txt`
+
+Adiciona a nova versão do `texto.txt` no stage.
+
+---
+
+### 20. `git commit -m "Altera o conteúdo de texto.txt da branch main"`
+
+Salva essa nova modificação no repositório local, na branch `main`.
+
+---
+
+### 21. `git merge feature-1`
+
+Tenta unir (fazer merge) da branch `feature-1` com a `main`.
+**Como havia alterações diferentes no mesmo trecho do arquivo `texto.txt`, ocorreu um conflito.**
+
+---
+
+### 22. (Conflito resolvido manualmente no arquivo `texto.txt`)
+
+---
+
+### 23. `git add texto.txt`
+
+Adiciona o arquivo com o conflito resolvido ao stage.
+
+---
+
+### 24. `git commit -m "Resolvido conflito entre main e feature-1"`
+
+Finaliza o merge após resolver o conflito, salvando as alterações unificadas.
+
+---
+
