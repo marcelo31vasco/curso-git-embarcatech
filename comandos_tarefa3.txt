@@ -1,1 +1,68 @@
 Comandos usados na tarefa da 3 unidade
+
+# 1. Criar um diretório e inicializar um repositório Git
+mkdir tarefa_final_git
+cd tarefa_final_git
+git init
+
+# 2. Criar três arquivos de texto diferentes
+echo "Primeiro arquivo" > arquivo1.txt
+echo "Segundo arquivo" > arquivo2.txt
+echo "Terceiro arquivo" > arquivo3.txt
+
+# 3. Adicionar e realizar o commit inicial
+git add .
+git commit -m "Commit inicial com os três arquivos de texto"
+
+# 4. Alterar dois arquivos
+echo "Adicionando conteúdo ao arquivo1" >> arquivo1.txt
+echo "Adicionando conteúdo ao arquivo2" >> arquivo2.txt
+
+# 5. Verificar alterações
+git status
+git diff
+
+# 6. Adicionar alterações e fazer commit
+git add arquivo1.txt arquivo2.txt
+git commit -m "Alterados arquivo1 e arquivo2"
+
+# 7. Visualizar histórico
+git log
+git log --oneline
+git log --graph --all
+
+# 8. Reverter o último commit (mantendo alterações anteriores)
+git revert HEAD
+
+# 9. Modificar um arquivo e armazenar temporariamente
+nano arquivo3.txt  # (ou echo "nova linha" >> arquivo3.txt)
+git add arquivo3.txt
+git stash
+
+# 10. Criar nova branch e mudar para ela
+git checkout -b nova-linha
+
+# 11. Retomar alterações armazenadas
+git stash pop
+
+# 12. Verificar registros recentes, inclusive reflog
+git reflog
+
+# 13. Marcar commit inicial com tag
+git tag -a v1.0 -m "Versão estável inicial" c587aba
+
+# 14. Subir a tag para o repositório remoto
+git remote add origin https://github.com/marcelo31vasco/curso-git-embarcatech.git
+git push origin nova-linha
+git push origin v1.0
+
+# 15. Criar comandos.txt e adicionar todos os comandos
+echo "(copie e cole todos os comandos deste arquivo)" > comandos.txt
+
+# 16. Adicionar e commitar comandos.txt
+git add comandos.txt
+git commit -m "Adicionado comandos.txt com todos os comandos usados"
+
+# 17. Subir tudo para o repositório remoto
+git push origin nova-linha
+
