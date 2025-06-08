@@ -1,9 +1,13 @@
 name: CI/CD Pipeline
-
 on:
   push:
     branches:
       - main
+
+permissions: # Adicione esta seção
+  contents: write # Permite que o workflow escreva no repositório
+  pages: write # Permite que o workflow crie e atualize as páginas
+  id-token: write # Necessário para o OIDC, que é usado internamente pelo peaceiris/actions-gh-pages
 
 jobs:
   validate:
@@ -18,7 +22,6 @@ jobs:
             echo "index.html não encontrado!"
             exit 1
           fi
-
   deploy:
     runs-on: ubuntu-latest
     needs: validate
