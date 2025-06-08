@@ -17,17 +17,17 @@ jobs:
           if [ ! -f public/index.html ]; then
             echo "index.html não encontrado!"
             exit 1
-            fi
-          
-         deploy:
-            runs-on: ubuntu-latest
-            needs: validate
-            steps:
-              - name: Checkout
-                uses: actions/checkout@v2
+          fi
 
-              - name: Deploy para Github Pages
-                uses: peaceiris/actions-gh-page@v3
-              with:
-                github_token: &{{ secrets.GITHUB_TOKEN }}
-                public_dir: ./public
+  deploy:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
